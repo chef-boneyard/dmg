@@ -36,11 +36,10 @@ action :install do
     dmg_name = new_resource.dmg_name ? new_resource.dmg_name : new_resource.app
     dmg_file = "#{Chef::Config[:file_cache_path]}/#{dmg_name}.dmg"
 
-    if new_resource.source
-      remote_file dmg_file do
-        source new_resource.source
-        checksum new_resource.checksum if new_resource.checksum
-      end
+    remote_file dmg_file do
+      source new_resource.source
+      checksum new_resource.checksum if new_resource.checksum
+      only_if { new_resource.source }
     end
 
     execute "hdid #{dmg_file}" do
@@ -56,11 +55,10 @@ action :install do
 
     execute "hdiutil detach '/Volumes/#{volumes_dir}'"
 
-    if ::File.directory?("#{new_resource.destination}/#{new_resource.app}.app")
-      file "#{new_resource.destination}/#{new_resource.app}.app/Contents/MacOS/#{new_resource.app}" do
-        mode 0755
-        ignore_failure true
-      end
+    file "#{new_resource.destination}/#{new_resource.app}.app/Contents/MacOS/#{new_resource.app}" do
+      mode 0755
+      ignore_failure true
+      only_if { ::File.directory?("#{new_resource.destination}/#{new_resource.app}.app") }
     end
 
     new_resource.updated_by_last_action(true)
