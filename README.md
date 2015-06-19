@@ -101,16 +101,6 @@ dmg_package 'pgAdmin3' do
 end
 ```
 
-Install Pivotal Tracker to `/Applications` using a password-protected dmg:
-
-```ruby
-dmg_package 'Pivotal Tracker' do
-  volumes_dir    'tracker'
-  source         'http://cheffiles.pivotallabs.com/fluid_tracker.dmg'
-  dmg_passphrase 'xyz'
-end
-```
-
 Install Silverlight, with idempotence check based on pkgutil:
 
 ```ruby
