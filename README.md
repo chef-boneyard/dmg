@@ -1,5 +1,9 @@
 dmg Cookbook
 ============
+
+[![Build Status](https://travis-ci.org/opscode-cookbooks/dmg.svg?branch=master)](https://travis-ci.org/opscode-cookbooks/dmg)
+[![Cookbook Version](https://img.shields.io/cookbook/v/dmg.svg)](https://supermarket.chef.io/cookbooks/dmg)
+
 Lightweight resource and provider to install OS X applications (.app) from dmg files.
 
 
@@ -118,7 +122,7 @@ License & Authors
 - Author:: Joshua Timberman (joshua@chef.io)
 
 ```text
-Copyright 2011, Joshua Timberman <cookbooks@housepub.org>
+Copyright 2011-2015, Joshua Timberman <cookbooks@housepub.org>
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
