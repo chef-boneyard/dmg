@@ -7,3 +7,6 @@ description      'LWRP to install OS X applications from dmgs'
 long_description IO.read(File.join(File.dirname(__FILE__), 'README.md'))
 version          '2.2.2'
 supports         'mac_os_x'
+
+source_url 'https://github.com/opscode-cookbooks/dmg' if respond_to?(:source_url)
+issues_url 'https://github.com/opscode-cookbooks/dmg/issues' if respond_to?(:source_url)
