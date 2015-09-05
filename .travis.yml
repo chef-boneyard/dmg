@@ -1,11 +1,12 @@
 sudo: false
 cache: bundler
 language: ruby
+bundler_args: --without kitchen_common kitchen_vagrant kitchen_cloud
 rvm:
   - 2.0
   - 2.1
   - 2.2
 script:
   - bundle exec foodcritic -f any . --tags ~FC007 --tags ~FC023 --tags ~FC024 --tags ~FC048
-  # - bundle exec rspec --color --format progress
-  - bundle exec rubocop -l
+  - bundle exec rubocop
+  - bundle exec rspec --color --format progress
