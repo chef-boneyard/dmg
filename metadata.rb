@@ -1,4 +1,3 @@
-# Encoding: utf-8
 name             'dmg'
 maintainer       'Chef Software, Inc'
 maintainer_email 'cookbooks@chef.io'
@@ -9,4 +8,4 @@ version          '2.2.2'
 supports         'mac_os_x'
 
 source_url 'https://github.com/opscode-cookbooks/dmg' if respond_to?(:source_url)
-issues_url 'https://github.com/opscode-cookbooks/dmg/issues' if respond_to?(:source_url)
+issues_url 'https://github.com/opscode-cookbooks/dmg/issues' if respond_to?(:issues_url)
