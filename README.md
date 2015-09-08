@@ -1,7 +1,7 @@
 dmg Cookbook
 ============
 
-[![Build Status](https://travis-ci.org/opscode-cookbooks/dmg.svg?branch=master)](https://travis-ci.org/opscode-cookbooks/dmg)
+[![Build Status](https://travis-ci.org/chef-cookbooks/dmg.svg?branch=master)](https://travis-ci.org/chef-cookbooks/dmg)
 [![Cookbook Version](https://img.shields.io/cookbook/v/dmg.svg)](https://supermarket.chef.io/cookbooks/dmg)
 
 Lightweight resource and provider to install OS X applications (.app) from dmg files.

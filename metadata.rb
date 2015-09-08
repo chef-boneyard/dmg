@@ -7,5 +7,5 @@ long_description IO.read(File.join(File.dirname(__FILE__), 'README.md'))
 version          '2.2.2'
 supports         'mac_os_x'
 
-source_url 'https://github.com/opscode-cookbooks/dmg' if respond_to?(:source_url)
-issues_url 'https://github.com/opscode-cookbooks/dmg/issues' if respond_to?(:issues_url)
+source_url 'https://github.com/chef-cookbooks/dmg' if respond_to?(:source_url)
+issues_url 'https://github.com/chef-cookbooks/dmg/issues' if respond_to?(:issues_url)
