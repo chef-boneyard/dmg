@@ -2,6 +2,24 @@ dmg Cookbook CHANGELOG
 ======================
 This file is used to list changes made in each version of the dmg cookbook.
 
+v2.3.0 (2015-10-20)
+-------------------
+* Add new headers property to the LWRP for custom http headers.  See the readme for more information
+* Removed pivotal tracker example in the readme
+* Added travis and cookbook version badges to the readme
+* Added a .foodcritic file to exclude rules
+* Updated chefignore and .gitignore files
+* Updated platforms in Test Kitchen
+* Added standard Rubocop file
+* Updated Travis to test using ChefDK for the latest deps
+* Added a Berksfile
+* Updated contributing and testing docs
+* Updated Gemfile with the latest testing deps
+* Added maintainers.md and maintainers.toml
+* Added rakefile for simplified testing
+* Added source_url and issues_url metadata
+* Added basic converge chefspec
+
 v2.2.2 (2014-11-12)
 -------------------
 - #23, add chefspec matchers
