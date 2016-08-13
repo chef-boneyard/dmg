@@ -1,26 +1,25 @@
-dmg Cookbook
-============
+# dmg Cookbook
 
-[![Build Status](https://travis-ci.org/chef-cookbooks/dmg.svg?branch=master)](https://travis-ci.org/chef-cookbooks/dmg)
-[![Cookbook Version](https://img.shields.io/cookbook/v/dmg.svg)](https://supermarket.chef.io/cookbooks/dmg)
+[![Build Status](https://travis-ci.org/chef-cookbooks/dmg.svg?branch=master)](https://travis-ci.org/chef-cookbooks/dmg) [![Cookbook Version](https://img.shields.io/cookbook/v/dmg.svg)](https://supermarket.chef.io/cookbooks/dmg)
 
-Lightweight resource and provider to install OS X applications (.app) from dmg files.
+Resource to install OS X applications (.app) from dmg files.
 
+## Requirements
 
-Requirements
-------------
-#### Platforms
+### Platforms
+
 - Mac OS X
 
-#### Chef
+### Chef
+
 - Chef 11+
 
-#### Cookbooks
+### Cookbooks
+
 - none
 
+## Resources/Providers
 
-Resources/Providers
--------------------
 ### dmg_package
 
 This resource will install a DMG "Package". It will retrieve the DMG from a remote URL, mount it using OS X's `hdid`, copy the application (.app directory) to the specified destination (/Applications), and detach the image using `hdiutil`. The dmg file will be stored in the `Chef::Config[:file_cache_path]`. If you want to install an application that has already been downloaded (not using the `source` parameter), copy it to the appropriate location. You can find out what directory this is with the following command on the node to run chef:
@@ -32,9 +31,11 @@ knife exec -E 'p Chef::Config[:file_cache_path]' -c /etc/chef/client.rb
 Optionally, the LWRP can install an "mpkg" or "pkg" package using installer(8).
 
 #### Actions
+
 - :install - Installs the application.
 
 #### Parameter attributes:
+
 - `app` - This is the name of the application used by default for the /Volumes directory and the .app directory copied to /Applications.
 - `source` - remote URL for the dmg to download if specified. Default is nil.
 - `file` - local dmg full file path. Default is nil.
@@ -46,10 +47,11 @@ Optionally, the LWRP can install an "mpkg" or "pkg" package using installer(8).
 - `package_id` - Package id registered with pkgutil when a pkg or mpkg is installed
 - `dmg_name` - Specify the name of the dmg if it is not the same as `app`, or if the name has spaces.
 - `dmg_passphrase` - Specify a passphrase to use to unencrypt the dmg while mounting.
-- `accept_eula` - Specify whether to accept the EULA.  Certain dmgs require acceptance of EULA before mounting.  Can be true or false, defaults to false.
+- `accept_eula` - Specify whether to accept the EULA. Certain dmgs require acceptance of EULA before mounting. Can be true or false, defaults to false.
 - `headers` - Allows custom HTTP headers (like cookies) to be set on the remote_file resource.
 
 #### Examples
+
 Install `/Applications/Tunnelblick.app` from the primary download site.
 
 ```ruby
@@ -123,13 +125,12 @@ dmg_package 'Silerlight' do
 end
 ```
 
+## License & Authors
 
-License & Authors
------------------
-
-**Author:** Cookbook Engineering Team (<cookbooks@chef.io>)
+**Author:** Cookbook Engineering Team ([cookbooks@chef.io](mailto:cookbooks@chef.io))
 
 **Copyright:** 2011-2015, Chef Software, Inc.
+
 ```
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
