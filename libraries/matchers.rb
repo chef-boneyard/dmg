@@ -1,4 +1,4 @@
-# Encoding: utf-8
+#
 # Cookbook Name:: dmg
 # Library:: matchers
 #
