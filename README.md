@@ -12,7 +12,7 @@ Resource to install OS X applications (.app) from dmg files.
 
 ### Chef
 
-- Chef 11+
+- Chef 12+
 
 ### Cookbooks
 
