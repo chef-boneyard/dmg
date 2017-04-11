@@ -2,6 +2,13 @@
 
 This file is used to list changes made in each version of the dmg cookbook.
 
+## 3.1.1 (2017-04-11)
+
+- Cookstyle updates
+- Test with Local Delivery and not Rake
+- Update apache2 license string
+- Remove foodcritic exclusions
+
 ## 3.1.0 (2017-01-18)
 
 - Fixed pkg,mpkg installation when it was using mounted app name while it was actually mounted under different name for some applications
