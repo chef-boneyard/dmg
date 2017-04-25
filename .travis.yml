@@ -1,13 +1,14 @@
-# Use Travis's cointainer based infrastructure
-sudo: false
+sudo: required
+dist: trusty
+
 addons:
   apt:
     sources:
-      - chef-stable-precise
+      - chef-stable-trusty
     packages:
       - chefdk
 
-# Don't `bundle install`
+# Don't `bundle install` which takes about 1.5 mins
 install: echo "skip bundle install"
 
 branches:
@@ -17,8 +18,7 @@ branches:
 # Ensure we make ChefDK's Ruby the default
 before_script:
   - eval "$(/opt/chefdk/bin/chef shell-init bash)"
-  # We have to install chef-sugar for ChefSpec
-  - /opt/chefdk/embedded/bin/chef gem install chef-sugar
+
 script:
   - /opt/chefdk/embedded/bin/chef --version
   - /opt/chefdk/embedded/bin/cookstyle --version
