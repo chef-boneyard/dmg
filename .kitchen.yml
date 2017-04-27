@@ -1,0 +1,22 @@
+driver:
+  name: vagrant
+  provider: vmware_fusion
+
+provisioner:
+  name: chef_zero
+  deprecations_as_errors: true
+
+verifier:
+  name: inspec
+
+platforms:
+  - name: macosx-10.10
+    driver:
+      box: chef/macosx-10.10 # private box in Chef's Atlas account
+  - name: macosx-10.11
+    driver:
+      box: chef/macosx-10.11 # private box in Chef's Atlas account
+
+suites:
+  - name: default
+    run_list: test::default

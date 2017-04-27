@@ -56,8 +56,8 @@ Install `/Applications/Tunnelblick.app` from the primary download site.
 
 ```ruby
 dmg_package 'Tunnelblick' do
-  source   'http://tunnelblick.googlecode.com/files/Tunnelblick_3.1.2.dmg'
-  checksum 'a3fae60b6833175f32df20c90cd3a3603a'
+  source   'https://tunnelblick.net/release/Tunnelblick_3.7.0_build_4790.dmg'
+  checksum '5053038aa8caf7dea66dcab11d6d240672216e6546eff4c2622e216c61af85e5'
   action   :install
 end
 ```
