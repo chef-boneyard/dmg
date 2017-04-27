@@ -8,7 +8,7 @@ Resource to install OS X applications (.app) from dmg files.
 
 ### Platforms
 
-- Mac OS X
+- macOS
 
 ### Chef
 
@@ -129,7 +129,7 @@ end
 
 **Author:** Cookbook Engineering Team ([cookbooks@chef.io](mailto:cookbooks@chef.io))
 
-**Copyright:** 2011-2015, Chef Software, Inc.
+**Copyright:** 2011-2017, Chef Software, Inc.
 
 ```
 Licensed under the Apache License, Version 2.0 (the "License");
