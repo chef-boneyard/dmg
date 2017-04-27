@@ -10,4 +10,4 @@ supports         'mac_os_x'
 source_url 'https://github.com/chef-cookbooks/dmg'
 issues_url 'https://github.com/chef-cookbooks/dmg/issues'
 
-chef_version '>= 12.1'
+chef_version '>= 12.5'
