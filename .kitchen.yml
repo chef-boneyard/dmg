@@ -23,3 +23,5 @@ platforms:
 suites:
   - name: default
     run_list: test::default
+  - name: untrusted
+    run_list: test::untrusted
