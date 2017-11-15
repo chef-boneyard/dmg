@@ -88,7 +88,7 @@ action :install do
         ignore_failure true
       end
     when 'mpkg', 'pkg'
-      install_cmd = "installation_file=$(ls '/Volumes/#{volumes_dir}' | grep '.#{new_resource.type}$') && sudo installer -pkg \"/Volumes/#{volumes_dir}/$installation_file\" -target /" 
+      install_cmd = "installation_file=$(ls '/Volumes/#{volumes_dir}' | grep '.#{new_resource.type}$') && sudo installer -pkg \"/Volumes/#{volumes_dir}/$installation_file\" -target /"
       install_cmd += ' -allowUntrusted' if new_resource.allow_untrusted
 
       execute install_cmd do

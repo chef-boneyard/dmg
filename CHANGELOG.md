@@ -2,6 +2,12 @@
 
 This file is used to list changes made in each version of the dmg cookbook.
 
+## 4.1.0 (2017-11-15)
+
+- Adds allow_untrusted property for older packages that aren't signed
+- Resolve Chef 14 deprecation warnings
+- Minor testing updates and cleanup
+
 ## 4.0.0 (2017-04-27)
 
 - Converted the existing LWRP to a custom resource which increases the required chef-client release to 12.5+
