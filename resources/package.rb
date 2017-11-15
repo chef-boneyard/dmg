@@ -88,8 +88,10 @@ action :install do
         ignore_failure true
       end
     when 'mpkg', 'pkg'
-      allow_untrusted_cmd = allow_untrusted ? '-allowUntrusted' : ''
-      execute "installation_file=$(ls '/Volumes/#{volumes_dir}' | grep '.#{new_resource.type}$') && sudo installer -pkg \"/Volumes/#{volumes_dir}/$installation_file\" -target / #{allow_untrusted_cmd}" do
+      install_cmd = "installation_file=$(ls '/Volumes/#{volumes_dir}' | grep '.#{new_resource.type}$') && sudo installer -pkg \"/Volumes/#{volumes_dir}/$installation_file\" -target /" 
+      install_cmd += '-allowUntrusted' if allow_untrusted
+
+      execute install_cmd do
         # Prevent cfprefsd from holding up hdiutil detach for certain disk images
         environment('__CFPREFERENCES_AVOID_DAEMON' => '1')
       end
