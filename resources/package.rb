@@ -32,6 +32,7 @@ property :package_id, String
 property :dmg_passphrase, String
 property :accept_eula, [true, false], default: false
 property :headers, [Hash, nil], default: nil
+property :allow_untrusted, [true, false], default: false
 
 load_current_value do |new_resource|
   if ::File.directory?("#{new_resource.destination}/#{new_resource.app}.app")
@@ -87,7 +88,10 @@ action :install do
         ignore_failure true
       end
     when 'mpkg', 'pkg'
-      execute "installation_file=$(ls '/Volumes/#{volumes_dir}' | grep '.#{new_resource.type}$') && sudo installer -pkg \"/Volumes/#{volumes_dir}/$installation_file\" -target /" do
+      install_cmd = "installation_file=$(ls '/Volumes/#{volumes_dir}' | grep '.#{new_resource.type}$') && sudo installer -pkg \"/Volumes/#{volumes_dir}/$installation_file\" -target /" 
+      install_cmd += ' -allowUntrusted' if new_resource.allow_untrusted
+
+      execute install_cmd do
         # Prevent cfprefsd from holding up hdiutil detach for certain disk images
         environment('__CFPREFERENCES_AVOID_DAEMON' => '1')
       end

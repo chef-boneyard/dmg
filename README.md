@@ -49,6 +49,7 @@ Optionally, the LWRP can install an "mpkg" or "pkg" package using installer(8).
 - `dmg_passphrase` - Specify a passphrase to use to unencrypt the dmg while mounting.
 - `accept_eula` - Specify whether to accept the EULA. Certain dmgs require acceptance of EULA before mounting. Can be true or false, defaults to false.
 - `headers` - Allows custom HTTP headers (like cookies) to be set on the remote_file resource.
+- `allow_untrusted` - Allows packages with untrusted certs to be installed.
 
 #### Examples
 
