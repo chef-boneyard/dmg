@@ -26,7 +26,7 @@ property :destination, String, default: '/Applications'
 property :checksum, String
 property :volumes_dir, String
 property :dmg_name, String
-property :type, String, default: 'app'
+property :type, String, default: 'app', equal_to: %w(app pkg mpkg)
 property :installed, [true, false], default: false, desired_state: false
 property :package_id, String
 property :dmg_passphrase, String
