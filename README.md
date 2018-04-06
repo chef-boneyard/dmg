@@ -1,3 +1,5 @@
+The dmg_package resource is now included in Chef 14 and this cookbook has been deprecated. We highly recommend updating to Chef 14 so you can use this resource without the need for a cookbook dependency.
+
 # dmg Cookbook
 
 [![Build Status](https://travis-ci.org/chef-cookbooks/dmg.svg?branch=master)](https://travis-ci.org/chef-cookbooks/dmg) [![Cookbook Version](https://img.shields.io/cookbook/v/dmg.svg)](https://supermarket.chef.io/cookbooks/dmg)
